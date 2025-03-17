@@ -1,12 +1,14 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
 const db = require('./db');
 const Person = require('./models/Person');
 const MenuItem = require('./models/MenuItem');
+require('dotenv').config();
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json())
+
+const PORT = process.env.PORT || 3000;
 
 
 /*
